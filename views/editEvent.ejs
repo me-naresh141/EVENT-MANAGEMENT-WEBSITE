@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <header class=" bg-black pading-1a">
+        <div class="container flex justify-between">
+            <a href="/" class="color-white text-shadow">Home</a>
+            <a href="/users/<%=blog.id%>"><button class="btn">Back</button></a>
+        </div>
+    </header>
+    <!-- main -->
+    <main>
+        <section class="bg-dark">
+            <div class="container height-90vh flex justify-center align-center ">
+
+                <div class="width-40 border margin pading-1a width-100-mq">
+                    <h1 class="text-center color-white text-shadow font-size margin-tb1">Edit Event</h1>
+                    <form action="/users/<%=blog.id%>" method="post" class=" border-dark pading-1a text-center">
+                        <label for="#">Add Name</label>
+                        <input type="text" name="author" class="full-width font-size" placeholder="Add Author"
+                            value="<%=blog.author%>" required>
+                        <label for="#">Add Title</label>
+                        <input type="text" name="title" class="full-width font-size" placeholder="Title"
+                            value="<%=blog.title%>">
+                        <label for="#">Add Summary</label>
+                        <textarea name="summary" class="full-width font-size" cols="10"
+                            rows="3"><%=blog.summary%></textarea>
+                        <label for="#">Add Category</label>
+                        <input type="text" name="category" class="full-width font-size" placeholder="Add Category"
+                            value="<%=blog.category%>">
+                        <label for="#">Add Location</label>
+                        <input type="text" name="location" class="full-width font-size" value="<%=blog.location%>">
+                        <input type="Submit" class="btn margin-tb1">
+                    </form>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <!-- footer -->
+    <footer class="bg-black pading-1a">
+        <section class="container color-white text-center text-shadow">
+            <small>
+                Copyright ©2022 All rights reserved | This template is made with 💚 by
+                Naresh Rajput
+            </small>
+        </section>
+    </footer>
+</body>
+
+</html>

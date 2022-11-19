@@ -1,0 +1,110 @@
+@import './reset.css';
+@import './global.css';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.bg-dark {
+  background-color: rgba(0, 0, 0, 0.926);
+}
+.bg-black {
+  background-color: black;
+}
+.color-green {
+  color: green;
+}
+.color-red {
+  color: red;
+}
+.color-white {
+  color: rgb(187, 187, 244);
+}
+.color-gray {
+  color: bisque;
+}
+.text-shadow {
+  text-shadow: 2px 2px 3px green;
+}
+.box-shadow {
+  box-shadow: 0px 8px 2px 0px black;
+}
+
+.border {
+  border: 2px solid green;
+}
+.border-dark {
+  border: 2px solid;
+}
+
+.font-size {
+  font-size: 1.5rem;
+}
+
+.line-height {
+  line-height: 5;
+}
+.overflow-scroll {
+  overflow-y: scroll;
+}
+.overflow-scrollX {
+  overflow-x: scroll;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.word-wrap {
+  word-wrap: break-word;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+/*  */
+label {
+  color: rgb(187, 187, 244);
+  text-shadow: 2px 2px 3px green;
+  margin: 0.5rem;
+  display: block;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 13px;
+  }
+  .flex-mq {
+    display: flex;
+  }
+  .flex-colum-mq {
+    /* flex-direction: column; */
+    flex-direction: column-reverse;
+  }
+  .linehight-mq {
+    line-height: 2rem;
+  }
+  .marginb1-mq {
+    margin-bottom: 0.3rem;
+  }
+  .margint3-mq {
+    margin-top: 9rem;
+  }
+
+  .width-100-mq {
+    width: 100%;
+  }
+
+  .width-80-mq {
+    width: 80%;
+  }
+  .border-none-mq {
+    border: none;
+  }
+  .height-30-mq {
+    height: 28%;
+  }
+}

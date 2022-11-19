@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/d08fba0fb1.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <header class=" bg-black pading-1a">
+        <div class="container flex justify-between">
+            <a href="/" class="color-white text-shadow">Home</a>
+            <div>
+                <a href="/users"><button class="btn">Back</button></a>
+                <a href="/users/new"><button class="btn">New Event</button></a>
+            </div>
+
+        </div>
+    </header>
+    <!-- main -->
+    <main>
+        <section class="bg-dark">
+            <div class="container  height-90vh">
+                <!-- author -->
+                <h1 class="color-white text-uppercase">
+                    <span class="color-gray">Author Name : </span>
+                    <%=blog.author%>
+                </h1>
+                <h1 class="color-white text-uppercase margin-tb5 ">
+                    <span class="color-gray">Category : </span>
+                    <%=blog.category%>
+                </h1>
+                <h2 class="color-white text-uppercase"><span class="color-gray">Title : </span>
+                    <%=blog.title%>
+                </h2>
+                <p class="color-white margin-tb5"><span class="color-gray">Start-Date : </span>
+                    <%=blog.startDate.getDate()%> -
+                        <%=blog.startDate.getMonth()+1%> -
+                            <%=blog.startDate.getFullYear()%>
+                </p>
+
+                <p class="color-white margin-tb5"><span class="color-gray">End-Date : </span>
+                    <%=blog.endDate.getDate()%> -
+                        <%=blog.endDate.getMonth()+1%> -
+                            <%=blog.endDate.getFullYear()%>
+                </p>
+
+                <p class="color-white margin-tb5 heigth-10  overflow-scroll scrollbar-none "><span
+                        class="color-gray">Summary :
+                    </span>
+                    <%=blog.summary %>
+                </p>
+                <a class="font-size" href="/users/<%=blog.id%>/likes"><i class="fa-solid fa-thumbs-up"></i></a>
+                <span class="font-size color-gray">
+                    <%=blog.likes%>
+                </span>
+                <a class="marginleft-1 font-size" href="/users/<%=blog.id%>/dislike"> <i
+                        class="fa-solid fa-thumbs-down"></i></a>
+                <a href="/users/<%=blog.id%>/edit"><button class="btn">Edit</button></a>
+                <a href="/users/<%=blog.id%>/delete"><button class="btn color-red">Delete</button></a>
+                <!-- comment form -->
+                <div class="margin-tb1 ">
+                    <form action="/users/<%=blog.id%>/comments" method="post">
+                        <input type="text" name="title" id="" placeholder="Comment" class="font-size" required>
+                        <input type="text" name="author" id="" placeholder="Author Name" class="font-size" required>
+                        <button type="submit" class="btn">Add comment</button>
+                    </form>
+                </div>
+                <!-- allcomments box -->
+                <h1 class="color-white">
+                    <%=blog.remarks.length%> Comments
+                </h1>
+                <hr>
+                <div class=" heigth-50  overflow-scroll scrollbar-none height-30-mq">
+
+                    <%blog.remarks.forEach((elm)=>{%>
+                        <div class="bg-black margin-tb5 pading-1a">
+                            <h1 class="color-gray font-size">
+                                <%=elm.author%>
+                            </h1>
+                            <h2 class="color-white margin-tb5">
+                                <%=elm.title%>
+                            </h2>
+                            <a class="font-size" href="/remark/<%=elm.id%>/likes"><i
+                                    class="fa-solid fa-thumbs-up"></i></a>
+                            <span class="font-size color-gray">
+                                <%=elm.likes%>
+                            </span>
+                            <a class="marginleft-1 font-size" href="/remark/<%=elm.id%>/dislikes"><i
+                                    class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><button class="btn">Edit</button></a>
+                            <a href="/remark/<%=elm.id%>/delete"><button class="btn color-red">Delete</button></a>
+                        </div>
+                        <%})%>
+                </div>
+            </div>
+
+
+        </section>
+    </main>
+    <!-- footer -->
+    <footer class="bg-black pading-1a">
+        <section class="container color-white text-center text-shadow">
+            <small>
+                Copyright ©2022 All rights reserved | This template is made with 💚 by
+                Naresh Rajput
+            </small>
+        </section>
+    </footer>
+</body>
+
+</html>
